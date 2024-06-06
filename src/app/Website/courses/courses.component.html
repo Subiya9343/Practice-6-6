@@ -1,0 +1,32 @@
+<app-header></app-header>
+
+<div class="flex justify-content-center p-3">
+    <h2>Details</h2>
+</div>
+<div class="card flex justify-content-center p-4">
+    <p-table
+        [value]="data"
+        [paginator]="true"
+        [rows]="10"
+        [tableStyle]="{ 'min-width': '60rem' }"
+    >
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width:25%; text-align:center;padding: 10px;">ID</th>
+                <th style="width:25%; text-align:center;">First Name</th>
+                <th style="width:25%; text-align:center;">Last Name</th>
+                <th style="width:25%; text-align:center;">Age</th>
+                <th style="width:25%; text-align:center;">Company</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-data>
+            <tr class="p-table-row p-2" style="padding: 10px;">
+                <td style="text-align: center; padding: 10px;">{{ data.id }}</td>
+                <td style="text-align: center;">{{ data.firstName }}</td>
+                <td style="text-align: center;">{{ data.lastName }}</td>
+                <td style="text-align: center;">{{ data.age }}</td>
+                <td style="text-align: center;">{{ data.company }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
